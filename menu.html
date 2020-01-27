@@ -4,37 +4,65 @@
     <title>Menu</title>
     <meta charset="utf-8" />
     <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        #lightBoxBg {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            opacity: 0.5;
+            display: none;
+            background-color: #000000;
+            height: 100%;
+            width: 100%;
+        }
+
+        #lightBox {
+            position: absolute;
+            top: 25%;
+            left: 40%;
+            display: none;
+        }
+    </style>
+
+    <script>
+        function startLightBox() {
+            var lbBg = document.getElementById("lightBoxBg");
+            var lb = document.getElementById("lightBox");
+
+            lbBg.style.display = "block";
+            lb.style.display = "block";
+        }
+
+        function dismiss() {
+            var lbBg = document.getElementById("lightBoxBg");
+            var lb = document.getElementById("lightBox");
+            lbBg.style.display = "none";
+            lb.style.display = " none";
+        }
+    </script>
 </head>
 <body>
     <div class="top" style="background-color: #f70f0f; padding:0; border-color:black; margin:0;">
         <img src="images\photlinelogo.png" style="padding:0px;">
     </div>
-    <nav class="top" style="background-color: black; height:60px;">
+    <nav class="top" style="background-color: black; height:10%;">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="about.html">About Us</a>
         <a href="careers.html">Careers</a>
     </nav>
-    <div class="top" style="background-color: black; height:auto;">
+
+    <div id="lightBoxBg" onclick="dismiss()">
+
 
     </div>
-
-    <div class="" style="border-color:black; border:solid;">
-
-    </div>
-
-    
-
-    <div id="lightBox" style="opacity:1; height: 100vh; width: 100vw; z-index:1000; background: black; margin: auto;">
-
-       
-        <img src="menu.PNG" style="width:50%; height:50%; opacity:1;"/>
+    <div id="lightBox" style="background-color:#817454; padding:0; margin:0; border:0;">
+        <img src="menu.png"  style="width:80%; height: 80%; padding:0;"/>
 
     </div>
+    <button style="font-size:128px; " onclick="startLightBox()">Click Me</button>
 
 
-    <script>
-        document.getElementById("lightBox");
-    </script>
+
 </body>
 </html>
